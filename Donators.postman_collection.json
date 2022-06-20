@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "64e4d892-a483-42fd-b517-78d68eb3149c",
+		"name": "Donators",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20282580"
+	},
+	"item": [
+		{
+			"name": "Donators",
+			"item": [
+				{
+					"name": "Get All Donators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/donators/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"donators",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Donator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ssn\": 1917161975,\r\n    \"name\": \"Person Persington\",\r\n    \"birth_date\": \"2028-02-04\",\r\n    \"ethnicity\": \"Other\",\r\n    \"work_address\": \"1234 Address Drive, Las Vegas, NV, 89131\",\r\n    \"home_address\": \"4567 Address Drive, Las Vegas, NV, 89131\",\r\n    \"additional_address\": \"4578 Address Drive, Las Vegas, NV, 89131\",\r\n    \"work_phone\": \"7026955000\",\r\n    \"home_phone\": \"7026955000\",\r\n    \"additional_phone\": \"7026955000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/donators/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"donators",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Donations",
+			"item": [
+				{
+					"name": "Get All Donations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/donations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"donations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Donations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"donator_id\": 1,\r\n    \"donation_type\": \"check\",\r\n    \"donation_date\": \"2021-02-04\",\r\n    \"donation_amount\": 42.78,\r\n    \"donation_memo\": \"Alumni Donation\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/donations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"donations",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
