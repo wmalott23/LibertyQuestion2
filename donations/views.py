@@ -7,7 +7,7 @@ from .models import Donation
 
 # Create your views here.
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def donations_list(request):
     if request.method == 'GET':
         donations = Donation.objects.all()
@@ -15,6 +15,6 @@ def donations_list(request):
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = DonationSerializer(data=request.data)
-        serializer.is_valid(raise_excxeption=True)
+        serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)

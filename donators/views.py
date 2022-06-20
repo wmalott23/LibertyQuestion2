@@ -15,6 +15,6 @@ def donators_list(request):
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = DonatorSerializer(data=request.data)
-        serializer.is_valid(raise_excxeption=True)
+        serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
