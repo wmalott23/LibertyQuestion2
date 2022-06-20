@@ -7,9 +7,14 @@ from .models import Donator
 
 # Create your views here.
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def donators_list(request):
     if request.method == 'GET':
         donators = Donator.objects.all()
         serializer = DonatorSerializer(donators, many=True)
         return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = DonatorSerializer(data=request.data)
+        serializer.is_valid(raise_excxeption=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

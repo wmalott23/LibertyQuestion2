@@ -13,3 +13,8 @@ def donations_list(request):
         donations = Donation.objects.all()
         serializer = DonationSerializer(donations, many=True)
         return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = DonationSerializer(data=request.data)
+        serializer.is_valid(raise_excxeption=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
